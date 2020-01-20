@@ -15,8 +15,7 @@ const App =()=> {
 
 const getRecepies = async ()=> {
   const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`);
-  const data =  await response.json();
-  console.log(data.hits)
+  const data =  await response.json()
   setRecipes(data.hits);
 }
 // what are we search for
@@ -37,10 +36,13 @@ const getSearch = (e)=> {
     <form onSubmit = {getSearch} > 
     <div className='search-form'>
       <input type="text" placeholder='Search' className='search-bar' value={search} onChange={updateSearch}/>
-      <p>OR Select Sorce</p> {/*need a unique state for option select and multiple queries*/}
+      <p>OR Select Sorce</p>
       <select onClick={updateSearch} name="Sorces" id="sorces">
       <option value="Food Network">Food Network</option>
-      <option value="Bon Appetit">"Bon Appetit"</option>
+      <option value="Bon Appetit">Bon Appetit</option>
+      <option value="Serious Eats">Serious Eats</option>
+      <option value="Tasting Table">Tasting Table</option>
+      
       </select>
        </div>
       <button type="submit" className='search-button'>SEARCH</button>
