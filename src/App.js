@@ -2,19 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Recipe from './Recipe';
 
-let c = {
-  name: 'lala',
-  log: function() {
-    this.name = 'Jole';
-    let p = () => {
-      this.name = 'Pusikarina';
-      console.log(this);
-    };
-    p();
-  }
-};
-c.log();
-console.log(c);
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
